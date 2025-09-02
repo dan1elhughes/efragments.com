@@ -1,7 +1,6 @@
 baseURL = "https://efragments.com"
 languageCode = "en-gb"
 title = "efragments"
-publishdir = "dist"
 assetdir = "."
 
 [params]
@@ -17,6 +16,4 @@ weights = "300,400"
 notes = "/:title/"
 
 [params.unpkg]
-css = [
-	"normalize.css/normalize.css",
-]
+css = ["normalize.css/normalize.css"]
