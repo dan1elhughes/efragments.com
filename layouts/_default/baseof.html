@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-	<link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/style/main.css" />
 
-	<link rel="icon" type="image/png" href="/images/icon.png" />
+    <link rel="icon" type="image/png" href="/images/icon.png" />
 
-	<!-- Auto-generated Hugo generated-by tags -->
-	{{ .Hugo.Generator }}
+    <!-- Auto-generated Hugo generated-by tags -->
+    {{ hugo.Generator }}
 
-	<!-- RSS feed support -->
-	{{ range .AlternativeOutputFormats -}}
-		<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
-	{{ end }}
+    <!-- RSS feed support -->
+    {{ range .AlternativeOutputFormats -}}
+    <link
+      rel="{{ .Rel }}"
+      type="{{ .MediaType.Type }}"
+      href="{{ .Permalink | safeURL }}"
+    />
+    {{ end }}
 
-	<!-- External CSS dependencies -->
-	{{ range .Site.Params.Unpkg.Css -}}
-		<link rel="stylesheet" href="https://unpkg.com/{{.}}" >
-	{{ end }}
+    <!-- External CSS dependencies -->
+    {{ range .Site.Params.Unpkg.Css -}}
+    <link rel="stylesheet" href="https://unpkg.com/{{.}}" />
+    {{ end }}
 
-	<!-- Google fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ .Site.Params.Font.Name }}:{{ .Site.Params.Font.Weights }}" >
-	<style media="screen">html { font-family: "{{ .Site.Params.Font.Name }}"; }</style>
+    <!-- Google fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family={{ .Site.Params.Font.Name }}:{{ .Site.Params.Font.Weights }}"
+    />
+    <style media="screen">
+      html {
+        font-family: "{{ .Site.Params.Font.Name }}";
+      }
+    </style>
   </head>
   <body>
-	{{ partial "header.html" . }}
-    {{ block "main" . }}{{ end }}
+    {{ partial "header.html" . }} {{ block "main" . }}{{ end }}
   </body>
 </html>
