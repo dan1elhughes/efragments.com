@@ -5,6 +5,9 @@
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     <link rel="stylesheet" href="/style/main.css" />
 
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
     <link rel="icon" type="image/png" href="/images/icon.png" />
 
     <!-- Auto-generated Hugo generated-by tags -->
@@ -37,5 +40,15 @@
   </head>
   <body>
     {{ partial "header.html" . }} {{ block "main" . }}{{ end }}
+
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+      const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: true
+      });
+    </script>
   </body>
 </html>

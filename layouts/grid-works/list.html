@@ -1,0 +1,52 @@
+{{ define "main" }}
+<article>	
+	{{ $gifs := .Resources.Match "*.gif" }}
+	{{ if $gifs }}
+		{{ $parent := .Parent }}
+		{{ $siblings := sort $parent.Pages "File.Dir" "asc" }}
+		{{ $index := 0 }}
+		{{ range $i, $p := $siblings }}
+			{{ if eq $p.RelPermalink $.RelPermalink }}
+				{{ $index = $i }}
+			{{ end }}
+		{{ end }}
+		<nav class="series-nav">
+			{{ if gt $index 0 }}
+				{{ $prev := index $siblings (sub $index 1) }}
+				<a href="{{ $prev.RelPermalink }}" class="prev">&larr; {{ $prev.Title }}</a>
+			{{ end }}
+			<span class="current">{{ .Title }}</span>
+			{{ if lt $index (sub (len $siblings) 1) }}
+				{{ $next := index $siblings (add $index 1) }}
+				<a href="{{ $next.RelPermalink }}" class="next">{{ $next.Title }} &rarr;</a>
+			{{ end }}
+		</nav>
+		<div class="gif-grid">
+			{{ range sort $gifs "Name" "asc" }}
+			<figure>
+				<a href="{{ .RelPermalink }}" class="glightbox" data-gallery="gallery">
+					<img src="{{ .RelPermalink }}" alt="{{ .Name }}" />
+				</a>
+			</figure>
+			{{ end }}
+		</div>
+	{{ else }}
+		<h1>{{ .Title }}</h1>
+		{{ .Content }}
+		<div class="gif-grid">
+			{{ $pages := .Pages }}
+			{{ range sort $pages "File.Dir" "asc" }}
+			<figure>
+				<a href="{{ .RelPermalink }}">
+					{{ $seriesGifs := .Resources.Match "*.gif" }}
+					{{ with index (sort $seriesGifs "Name" "asc") 0 }}
+						<img src="{{ .RelPermalink }}" alt="{{ .Name }}" />
+					{{ end }}
+				</a>
+				<figcaption><a href="{{ .RelPermalink }}">{{ .Title }}</a></figcaption>
+			</figure>
+			{{ end }}
+		</div>
+	{{ end }}
+</article>
+{{ end }}

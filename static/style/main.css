@@ -17,6 +17,7 @@ body {
   font-family: Merriweather, sans-serif;
   color: #333;
   padding: 1em;
+  background: #ffd;
 }
 
 h1,
@@ -39,12 +40,37 @@ a:hover {
 header,
 footer {
   color: #ccc;
-  text-align: right;
   margin: auto;
 }
 
-header h1 {
-  margin-top: 0;
+.site-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 2400px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.site-header h1 {
+  margin: 0;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.header-right .hug {
+  margin: 0;
+}
+
+.back-link {
+  order: -1;
 }
 
 article {
@@ -59,7 +85,23 @@ hr {
   border-width: none;
   background: #333;
   height: 2px;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+}
+
+.series-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.series-nav .current {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 article p {
@@ -70,4 +112,71 @@ article img {
   width: 100px;
   margin: 2em auto;
   display: block;
+}
+
+.gif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-content: center;
+  max-width: 2400px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  gap: 1.5rem;
+  width: 100vw;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 2400px) {
+  .gif-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.gif-grid figure {
+  margin: 0;
+}
+
+.gif-grid img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.gif-grid figcaption {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* GLightbox fullscreen */
+.glightbox-open {
+  overflow: visible !important;
+}
+
+.goverlay {
+  background: #ffd !important;
+}
+
+@media (min-width: 769px) {
+  .goverlay {
+    background: #ffd !important;
+  }
+}
+
+.gslide-image img {
+  min-width: 75vw !important;
+  min-height: 75vh !important;
+  max-width: 75vw !important;
+  max-height: 75vh !important;
+  width: 75vw !important;
+  height: 75vh !important;
+  object-fit: contain !important;
+  image-rendering: pixelated;
+}
+
+.glightbox-clean .gslide-media {
+  box-shadow: none !important;
 }
