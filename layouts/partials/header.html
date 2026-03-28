@@ -1,11 +1,7 @@
 <header class="site-header">
-	{{ if and (in .RelPermalink "/grid-works/") (ne .RelPermalink "/grid-works/") }}
-		<a href="/grid-works/" class="back-link">Back</a>
-	{{ else }}
-		<span></span>
-	{{ end }}
-	<div class="header-right">
-		<h1><a href="/">{{ .Site.Title }}</a></h1>
-		<p class="hug">by {{ .Site.Params.author }}</p>
-	</div>
+  <span></span>
+  <div class="header-right">
+    <h1><a href="/">{{ .Site.Title }}</a></h1>
+    <p class="hug">by {{ .Site.Params.author }}</p>
+  </div>
 </header>

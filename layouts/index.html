@@ -1,11 +1,29 @@
 {{ define "main" }}
 <article>
-  <h1><a href="{{ "grid-works/" | relURL }}">Grid works</a></h1>
+  <h1>Grid Works</h1>
+  
+  {{ with .Site.GetPage "section" "grid-works" }}
+    {{ .Content }}
+    <div class="gif-grid constrained">
+      {{ $pages := .Pages }}
+      {{ range sort $pages "File.Dir" "asc" }}
+      <figure>
+        <a href="{{ .RelPermalink }}">
+          {{ $seriesGifs := .Resources.Match "*.gif" }}
+          {{ with index (sort $seriesGifs "Name" "asc") 0 }}
+            <img src="{{ .RelPermalink }}" alt="{{ .Name }}" />
+          {{ end }}
+        </a>
+        <figcaption><a href="{{ .RelPermalink }}">{{ .Title }}</a></figcaption>
+      </figure>
+      {{ end }}
+    </div>
+  {{ end }}
 
   <h1>Stories</h1>
   {{ range .Site.RegularPages }}
   <div>
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     <hr />
   </div>
   {{ end }}

@@ -69,10 +69,6 @@ footer {
   margin: 0;
 }
 
-.back-link {
-  order: -1;
-}
-
 article {
   margin: auto;
   max-width: 768px;
@@ -127,6 +123,16 @@ article img {
   box-sizing: border-box;
 }
 
+.gif-grid.constrained {
+  max-width: 768px;
+  margin: 0 auto;
+  width: auto;
+  padding: 0;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
 @media (min-width: 2400px) {
   .gif-grid {
     grid-template-columns: repeat(8, 1fr);
@@ -146,8 +152,6 @@ article img {
 }
 
 .gif-grid figcaption {
-  font-size: 1.5rem;
-  font-weight: bold;
   text-align: center;
 }
 
