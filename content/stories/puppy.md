@@ -1,6 +1,8 @@
-# An encounter with a puppy
-
-_11 June 2011_
+---
+title: "Encounter with a puppy"
+date: 2011-06-11
+draft: false
+---
 
 I was in the Balkans, visiting people. I had been left in charge of my friend's apartment for a few hours, while he and his wife went shopping.  I was also looking after their puppy and another visitor, Anne, someone whom I knew, but only remotely, and I had not seen her for quite a few years. My friend's puppy seemed very soft and had long hair and floppy ears. She was quite tiny, about 25 cm long.  Black and tan and white, especially white on the underside. I cannot remember what her name was, but for some reason, I was holding her, and across the room from me was Anne. Anne was a large lady in her 40s, with too much make up and spikey hair, and over-designed spectacles. In fact, most things about Anne were overdone. But when she saw the puppy, she cooed and clucked and said come to me darling, come to me, over and over to the puppy. I knew that the puppy did not take kindly to strangers at all. But there was something very welcoming and unthreatening about Anne, so I kneeled on the polished wooden floor with the puppy, and whispered to her, go on, see what she has got for you. 
 
