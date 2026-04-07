@@ -14,6 +14,8 @@
 			{{ if gt $index 0 }}
 				{{ $prev := index $siblings (sub $index 1) }}
 				<a href="{{ $prev.RelPermalink }}" class="prev">&larr; {{ $prev.Title }}</a>
+			{{ else }}
+				<span class="spacer"></span>
 			{{ end }}
 			<span class="current">{{ .Title }}</span>
 			{{ if lt $index (sub (len $siblings) 1) }}
