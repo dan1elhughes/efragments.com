@@ -9,16 +9,10 @@
       {{ range sort $pages "File.Dir" "asc" }}
       <figure>
         <a href="{{ .RelPermalink }}">
-          {{ $seriesGifs := .Resources.Match "*.gif" }}
-          {{ $sortedGifs := sort $seriesGifs "Name" "asc" }}
           {{ $seriesNum := .File.Dir }}
-          {{ $selectedGif := index $sortedGifs 0 }}
-          {{ range $sortedGifs }}
-            {{ if in .Name (printf "-%s.gif" $seriesNum) }}
-              {{ $selectedGif = . }}
-            {{ end }}
-          {{ end }}
-          {{ with $selectedGif }}
+          {{ $gifName := printf "%s-%s.gif" $seriesNum $seriesNum }}
+          {{ $gif := .Resources.GetMatch $gifName }}
+          {{ with $gif }}
             <img src="{{ .RelPermalink }}" alt="{{ .Name }}" />
           {{ end }}
         </a>
