@@ -10,7 +10,15 @@
       <figure>
         <a href="{{ .RelPermalink }}">
           {{ $seriesGifs := .Resources.Match "*.gif" }}
-          {{ with index (sort $seriesGifs "Name" "asc") 0 }}
+          {{ $sortedGifs := sort $seriesGifs "Name" "asc" }}
+          {{ $seriesNum := .File.Dir }}
+          {{ $selectedGif := index $sortedGifs 0 }}
+          {{ range $sortedGifs }}
+            {{ if in .Name (printf "-%s.gif" $seriesNum) }}
+              {{ $selectedGif = . }}
+            {{ end }}
+          {{ end }}
+          {{ with $selectedGif }}
             <img src="{{ .RelPermalink }}" alt="{{ .Name }}" />
           {{ end }}
         </a>
