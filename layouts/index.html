@@ -9,13 +9,6 @@
       {{ range sort $pages "File.Dir" "asc" }}
       <figure>
         <a href="{{ .RelPermalink }}">
-          <!-- DEBUG OUTPUT -->
-          <div style="display:none;">
-            Debug: File.Dir = {{ .File.Dir }}
-            Debug: After TrimSuffix = {{ strings.TrimSuffix "/" .File.Dir }}
-            Debug: After TrimPrefix = {{ strings.TrimPrefix "grid-works/" (strings.TrimSuffix "/" .File.Dir) }}
-            Debug: gifName would be = {{ printf "%s-%s.gif" (strings.TrimPrefix "grid-works/" (strings.TrimSuffix "/" .File.Dir)) (strings.TrimPrefix "grid-works/" (strings.TrimSuffix "/" .File.Dir)) }}
-          </div>
           {{ $seriesNum := strings.TrimPrefix "grid-works/" (strings.TrimSuffix "/" .File.Dir) }}
           {{ $gifName := printf "%s-%s.gif" $seriesNum $seriesNum }}
           {{ $gif := .Resources.GetMatch $gifName }}
