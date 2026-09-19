@@ -28,5 +28,3 @@ I have produced quite a number of these images myself and following the establis
 - [Aboriginal art in Australia](http://www.aboriginalartonline.com/art/rockage.html)
 - [Ancient art history](http://arthistory.about.com/cs/genprehistoric/)
 - [Research into European pre-historic art](http://europreart.net/index.htm)
-
-![](/images/grids/f05.gif)

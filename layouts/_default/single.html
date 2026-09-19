@@ -16,8 +16,13 @@
             {{ $gifs = $gifs | append (.Resources.Match "*.gif") }}
         {{ end }}
         {{ if $gifs }}
-            {{ $n := mod (hash.FNV32a .File.ContentBaseName) (len $gifs) }}
-            {{ $gif = (index $gifs $n).RelPermalink }}
+            {{/* A number from the filename: six hex digits of its MD5. */}}
+            {{ $hex := dict "0" 0 "1" 1 "2" 2 "3" 3 "4" 4 "5" 5 "6" 6 "7" 7 "8" 8 "9" 9 "a" 10 "b" 11 "c" 12 "d" 13 "e" 14 "f" 15 }}
+            {{ $n := 0 }}
+            {{ range (split (substr (md5 .File.ContentBaseName) 0 6) "") }}
+                {{ $n = add (mul $n 16) (index $hex .) }}
+            {{ end }}
+            {{ $gif = (index $gifs (mod $n (len $gifs))).RelPermalink }}
         {{ end }}
     {{ end }}
     {{ with $gif }}

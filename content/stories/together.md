@@ -39,5 +39,3 @@ Mary was with someone, a man about my age.  They were standing very close togeth
 The traffic noise was quite loud by now, with several buses rattling their way through this busy street, brakes squealing and windows rattling.  I decided not to suggest coffee as I was a bit confused now, but found myself instantly agreeing to it when she suggested it.  We set off along the footpath towards the coffee bar, and I put my hands in my pockets, only to find the silver charm at my fingertips.  I had completely forgotten about it.  'Have you got a charm bracelet?' I asked.  'No', she responded, 'I had a toy one when I was a kid, but I find that kind of jewellery irritating and pointless.'
 
 I was beginning to feel as though I was completely out of synchronization with everything going on around me, and wanted to re-wind the last few days and start over again.  But I wondered how far I would have to re-wind it.  A lot of things had been going wrong for a long time.
-
-![](/images/grids/f26.gif)

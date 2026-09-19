@@ -17,5 +17,3 @@ At its base, this thing was much wider, more or less spherical, about one metre 
 An indeterminate time passed before I regained consciousness. I was very hungry, as weak as a kitten, and experiencing little else other than immense pain. I passed out again. I drifted like this for many days, because sometimes it was light, sometimes dark.
 
 Finally, I awoke one morning to find a young girl, perhaps twelve, trickling water in to my mouth. She was startled as I spluttered awake, and said something in an unfamiliar language, but the sentiment was clearly soothing. I knew she had nursed me and kept me alive; I knew I was weak.
-
-![](/images/grids/f32.gif)
