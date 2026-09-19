@@ -1,7 +1,27 @@
 {{ define "main" }}
 <article>
-	<h1>{{ .Title }}</h1>
-	<hr/>
-	{{ .Content }}
+    <h1>{{ .Title }}</h1>
+    <hr/>
+    {{ .Content }}
+
+    {{/* One grid work per story. Fixed, not random: derived from the story's
+         own filename, so it is the same on every build. A `grid:` value in a
+         story's front matter overrides the choice. */}}
+    {{ $gif := "" }}
+    {{ if .Params.grid }}
+        {{ $gif = .Params.grid | relURL }}
+    {{ else }}
+        {{ $gifs := slice }}
+        {{ range (site.GetPage "/grid-works").Pages }}
+            {{ $gifs = $gifs | append (.Resources.Match "*.gif") }}
+        {{ end }}
+        {{ if $gifs }}
+            {{ $n := mod (hash.FNV32a .File.ContentBaseName) (len $gifs) }}
+            {{ $gif = (index $gifs $n).RelPermalink }}
+        {{ end }}
+    {{ end }}
+    {{ with $gif }}
+    <figure class="story-mark"><img src="{{ . }}" alt="" /></figure>
+    {{ end }}
 </article>
 {{ end }}

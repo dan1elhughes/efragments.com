@@ -326,3 +326,40 @@ body:has(.series-page) .site-header {
 .index-page h1 {
   padding: 0 var(--gap);
 }
+
+/* ---------------------------------------------------------------------------
+   The landing page
+   --------------------------------------------------------------------------- */
+
+/* Framing the introduction, rather than separating sections as the short
+   rule does on a story page. */
+.home hr {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+/* One grid work, chosen afresh each time the site is built. */
+.mark {
+  margin: 0 0 2.5rem;
+}
+
+.mark img {
+  width: 280px;
+  max-width: 100%;
+  margin: 0;
+  display: block;
+  image-rendering: pixelated;
+}
+
+/* A little tighter than the stories, which carry longer stretches of prose. */
+.home p {
+  line-height: 1.75rem;
+}
+
+/* ---------------------------------------------------------------------------
+   One grid work at the foot of each story. No connection to the story.
+   --------------------------------------------------------------------------- */
+
+.story-mark {
+  margin: 0;
+}

@@ -1,6 +1,18 @@
 {{ define "main" }}
-<article>
+<article class="home">
+  {{ $gifs := slice }}
+  {{ range (site.GetPage "/grid-works").Pages }}
+    {{ $gifs = $gifs | append (.Resources.Match "*.gif") }}
+  {{ end }}
+  {{ with index (shuffle $gifs) 0 }}
+  <figure class="mark">
+    <img src="{{ .RelPermalink }}" alt="" />
+  </figure>
+  {{ end }}
+
+  <hr />
   {{ .Content }}
+  <hr />
 
   {{ range .Site.Sections.ByWeight }}
   <section class="work">
