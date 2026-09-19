@@ -1,6 +1,6 @@
 {{ define "main" }}
-<article>	
-	{{ $gifs := .Resources.Match "*.gif" }}
+{{ $gifs := .Resources.Match "*.gif" }}
+<article class="{{ if $gifs }}series-page{{ else }}index-page{{ end }}">
 	{{ if $gifs }}
 		{{ $parent := .Parent }}
 		{{ $siblings := sort $parent.Pages "File.Dir" "asc" }}
@@ -34,7 +34,6 @@
 		</div>
 	{{ else }}
 		<h1>{{ .Title }}</h1>
-		{{ .Content }}
 		<div class="gif-grid">
 			{{ $pages := .Pages }}
 			{{ range sort $pages "File.Dir" "asc" }}

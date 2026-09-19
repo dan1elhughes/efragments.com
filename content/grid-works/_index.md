@@ -1,5 +1,6 @@
 ---
-title: Grid Works
+title: "Grid Works"
+weight: 20
 ---
 
-These designs were inspired by some entoptic art of a colleague, Ranko Bon, whose minimalist approach rubbed off on me. I started creating them in Microsoft Word for fun, then became fascinated by the possibilities in working within a very simple framework. I've worked through MS Paint and Android pixel editors, creating images at 84×60 pixels. The basic 3x2 format can be divided many ways. Black and white dominate, often with ambiguity about which is foreground. Red is the only accent colour; never touching black. Every element is a 3-pixel multiple, except where the numbers don't add up.
+These began as a bit of fun at the expense of Ranko Bon, a colleague of many years, whose passion for cave art and his imaginative use of the simplest forms of expression eventually rubbed off on me. I made the first ones in Microsoft Word, then settled on pixel editing. The images are 84 × 60 pixels. The basic 3×2 format can be divided many ways. Black and white dominate, often with ambiguity about which is foreground. Red is the only accent colour, and never touches black. Every element is a multiple of three pixels, except where the numbers don't add up.

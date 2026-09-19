@@ -1,31 +1,20 @@
 {{ define "main" }}
 <article>
-  <h1>Grid Works</h1>
-  
-  {{ with .Site.GetPage "section" "grid-works" }}
+  {{ .Content }}
+
+  {{ range .Site.Sections.ByWeight }}
+  <section class="work">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     {{ .Content }}
-    <div class="gif-grid constrained">
-      {{ $pages := .Pages }}
-      {{ range sort $pages "File.Dir" "asc" }}
-      <figure>
-        <a href="{{ .RelPermalink }}">
-          {{ $gif := index (sort (.Resources.Match "*.gif") "Name") 0 }}
-          {{ with $gif }}
-            <img src="{{ .RelPermalink }}" alt="{{ .Name }}" />
-          {{ end }}
-        </a>
-        <figcaption><a href="{{ .RelPermalink }}">{{ .Title }}</a></figcaption>
-      </figure>
-      {{ end }}
-    </div>
+  </section>
   {{ end }}
 
-  <h1>Stories</h1>
-  {{ range .Site.RegularPages }}
-  <div>
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    <hr />
-  </div>
+  {{ with .Site.Params.elsewhere }}
+  <footer class="elsewhere">
+    {{ range . }}
+    <a href="{{ .url }}">{{ .name }}</a>
+    {{ end }}
+  </footer>
   {{ end }}
 </article>
 {{ end }}

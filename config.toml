@@ -1,7 +1,6 @@
 baseURL = "https://efragments.com"
 languageCode = "en-gb"
 title = "efragments"
-assetdir = "."
 
 [params]
 author = "Will Hughes"
@@ -12,8 +11,17 @@ dateformat = "1 January 2000"
 name = "Merriweather"
 weights = "300,400"
 
-[permalinks]
-notes = "/:title/"
+[[params.elsewhere]]
+name = "Photographs"
+url = "https://arjibarji.wordpress.com/"
+
+[[params.elsewhere]]
+name = "Academic work"
+url = "https://www.reading.ac.uk/cme/staff/professor-will-hughes"
+
+[[params.elsewhere]]
+name = "CM Abstracts"
+url = "https://cmabstracts.com"
 
 [params.unpkg]
 css = ["normalize.css/normalize.css"]

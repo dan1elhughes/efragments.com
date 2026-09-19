@@ -1,1 +1,10 @@
-<!-- Blank listing, as list exists on homepage. -->
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  <ul class="story-list">
+    {{ range .Pages }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</article>
+{{ end }}
