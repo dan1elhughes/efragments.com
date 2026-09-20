@@ -363,3 +363,9 @@ body:has(.series-page) .site-header {
 .story-mark {
   margin: 0;
 }
+
+/* The date a story was written, under its title */
+.story-date {
+  font-style: italic;
+  margin: 0 0 2rem;
+}

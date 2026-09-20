@@ -2,8 +2,10 @@
 <article>
   <h1>{{ .Title }}</h1>
   <hr/>
+  {{/* Deliberately unordered: shuffled afresh on each build, so the
+       collection arranges itself in its own unplanned way. */}}
   <ul class="story-list">
-    {{ range .Pages }}
+    {{ range shuffle .Pages }}
     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{ end }}
   </ul>

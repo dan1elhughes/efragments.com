@@ -1,6 +1,6 @@
 ---
 title: "The sniper"
-date: 2005-05-15
+date: 2004-10-25
 draft: false
 ---
 

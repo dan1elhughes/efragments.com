@@ -1,6 +1,6 @@
 ---
 title: "The speed of sound"
-date: 2005-05-15
+date: 2003-06-07
 draft: false
 ---
 

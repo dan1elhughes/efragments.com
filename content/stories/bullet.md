@@ -1,6 +1,6 @@
 ---
 title: "Bullet"
-date: 2008-07-11
+date: 2008-06-11
 draft: false
 ---
 

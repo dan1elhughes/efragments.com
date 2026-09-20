@@ -1,6 +1,6 @@
 ---
 title: "Context of art"
-date: 2003-06-02
+date: 2003-05-26
 draft: false
 ---
 

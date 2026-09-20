@@ -5,7 +5,8 @@ title = "efragments"
 [params]
 author = "Will Hughes"
 authorimage = "/img/headshot.png"
-dateformat = "1 January 2000"
+# Go reference layout: day=2, month=January, year=2006
+dateformat = "2 January 2006"
 
 [params.font]
 name = "Merriweather"

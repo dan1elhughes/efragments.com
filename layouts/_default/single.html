@@ -2,6 +2,9 @@
 <article>
     <h1>{{ .Title }}</h1>
     <hr/>
+    {{ with .Date }}
+    <p class="story-date">{{ .Format (default "2 January 2006" site.Params.dateformat) }}</p>
+    {{ end }}
     {{ .Content }}
 
     {{/* One grid work per story. Fixed, not random: derived from the story's
